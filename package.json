@@ -16,7 +16,7 @@
 },
   "repository": {
   "type": "git",
-  "url": "https://github.com/Fl1ght9/skyline"
+  "url": "git@heroku.com:sky-line.git"
 },
   "keywords": [
   "node",
