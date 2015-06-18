@@ -5,7 +5,11 @@
   "main": "index.html",
   "scripts": {
   "start": "node server.js"
-},
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fl1ght9/skyline.git"
+  },
   "dependencies": {
     "body-parser": "^1.12.4",
     "cors": "^2.7.1",
@@ -13,5 +17,11 @@
     "password-hash-and-salt": "^0.1.2",
     "pg": "^4.3.0",
     "pg-native": "^1.8.1"
-  }
+  },
+    "keywords": [
+    "heroku",
+    "server"
+  ],
+  "author": "Mark Yin",
+  "license": "MIT"
 }
