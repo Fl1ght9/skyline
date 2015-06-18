@@ -1,0 +1,28 @@
+{
+  "name": "SkyLine",
+  "version": "0.0.1",
+  "description": "Connect the stars",
+  "main": "index.html",
+  "scripts": {
+  "start": "node server.js"
+},
+  "dependencies": {
+  "pg": "4.x",
+  "express": "~4.9.x",
+  "cors": "2.7.1"
+},
+  "engines": {
+  "node": "0.12.2"
+},
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/Fl1ght9/skyline"
+},
+  "keywords": [
+  "node",
+  "heroku",
+  "express"
+],
+  "author": "Mark Yin"
+  "license": "MIT"
+}

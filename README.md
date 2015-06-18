@@ -1,2 +1,2 @@
 # skyline
-Connect the stars
+web application with a postgres backend
