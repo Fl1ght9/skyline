@@ -29,6 +29,15 @@ app.post('/login', function(req, res){
 	return res.send('Error 400: Post syntax incorrect.')
 }
 
+//User verification
+var existingUser = client.query('SELECT COUNT(*) as count FROM logins WHERE username = $1', [req.body.user]);
+existingUser.on('end', function(result){
+	if(result.rows[0].count > 0){
+		res.statusCode = 409;
+		return res.send('Error 400: Username already exists');
+	}
+});
+
 //login credentials, encrypted pw
 query = client.query('SELECT * from logins where username = $1', [req.body.user]);
 console.log(req.body.user);
