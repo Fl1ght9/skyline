@@ -64,6 +64,25 @@ query.on('end', function(result){
 });
 });
 
+//On post using login, perform logout afterwards
+app.post('/logout', function(req, res){
+  console.log(req.body);
+  if(!req.body.hasOwnProperty('token')) {
+    res.statusCode = 400;
+    return res.send('Error 400: Post syntax incorrect.');
+  }
+  //loop through all tokens to check if its valid, then remove it
+  for(var i=0; i< acessTokens.length; i++){
+    if(req.body.token === acessTokens[i]){
+      acessTokens.splice(i, 1);
+      return res.send('You are now logged out');
+    }
+  }
+  //return error if invalid token
+  res.statusCode = 401;
+  res.send('ERROR 404: invalid access token');
+});
+
 // use PORT set as an environment variable
 var server = app.listen(50000, function() {
 	console.log('Listening on port %d', server.address().port);
