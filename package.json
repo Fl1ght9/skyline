@@ -4,7 +4,7 @@
   "description": "Connect the stars",
   "main": "index.html",
   "scripts": {
-  "start": "node server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -15,10 +15,10 @@
     "cors": "^2.7.1",
     "express": "^4.12.3",
     "password-hash-and-salt": "^0.1.2",
-    "pg": "^4.3.0",
+    "pg": "^4.4.0",
     "pg-native": "^1.8.1"
   },
-    "keywords": [
+  "keywords": [
     "heroku",
     "server"
   ],
