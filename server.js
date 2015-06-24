@@ -35,6 +35,21 @@ app.get('/', function(req, res){
 	res.sendfile('index.html');
 });
 
+//Get zodiac information from database
+app.get('/zodiac/:name', function(req, res){
+	query = client.query('SELECT name, info FROM zodiac WHERE name = $1', [req.params.id]);
+	query.on('row', function(result){
+		res.send(result);
+	});
+	 //perform check on end
+  	query.on('end', function(result){
+    if(result.rowCount === 0){
+      res.statusCode = 400;
+      res.send('ERROR 400: no data found');
+    }
+  });
+});
+
 //Login function on post
 app.post('/login', function(req, res){
 	console.log(req.body);
@@ -53,7 +68,7 @@ app.post('/login', function(req, res){
 // });
 
 //login credentials, encrypted pw
-query = client.query('SELECT * from logins where username = $1', [req.body.user]);
+query = client.query('SELECT * FROM logins WHERE username = $1', [req.body.user]);
 console.log(req.body.user);
 query.on('row', function(result){
 	//hash verification

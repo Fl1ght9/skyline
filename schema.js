@@ -50,8 +50,7 @@ var password = require('password-hash-and-salt');
 create_users_table ();
 create_login_table();
 
-var zodiacQuery = client.query('DROP TABLE IF EXISTS zodiac');
-var starQuery = client.query('DROP TABLE IF EXISTS star');
+query = client.query('DROP TABLE IF EXISTS zodiac; CREATE TABLE zodiac (id serial PRIMARY KEY, name varchar(80) UNIQUE NOT NULL, info varchar(800) NOT NULL');
 
 //Loading in zodiacs into database with reference to name and info
 for(var i = 0; i < zodiac.length; i++){
