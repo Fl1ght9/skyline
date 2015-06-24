@@ -52,7 +52,7 @@ function create_login_table(){
 		}
 		console.log('in password1');
 		// Store hash (incl. algorithm, iterations, and salt)
-		query = client.query('Insert into logins(username, password) values($1, $2)', ['sam', hash]);
+		query = client.query('Insert into logins(username, password) values($1, $2)', ['mark', hash]);
 		query.on('error', function(error){
 			throw new Error('failed on inserting first val ->' + error);
 		});

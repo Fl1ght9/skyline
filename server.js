@@ -1,7 +1,7 @@
 // use the express middleware
 var express = require('express');
 var password = require('password-hash-and-salt');
-var auth = require('./auth.js');
+var authen = require('./authentication.js');
 
 
 var pg = require('pg').native
@@ -71,7 +71,7 @@ query.on('row', function(result){
 	else {
 		//confirmation token added
 		console.log('adding token');
-		res.send(auth.addToken(result));
+		res.send(authen.addToken(result));
 	}
 });
 });
@@ -88,7 +88,7 @@ query.on('end', function(result){
 });
 
 //On post using login, perform logout afterwards
-app.post('/logout',auth.removeToken);
+app.post('/logout',authen.removeToken);
 
 // use PORT set as an environment variable
 var server = app.listen(50000, function() {
