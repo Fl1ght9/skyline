@@ -7,18 +7,30 @@ client = new pg.Client(connectionString);
 client.connect();
 
 var zodiac [
-	{ name: "Aries", info: "March 21 - April 19: Enthusiastic & Outgoing."},
-	{ name: "Taurus", info: "April 20 - May 20: Determined & Sensual."},
-	{ name: "Gemini", info: "May 21 - June 20: Intense & Explorative."},
-	{ name: "Cancer", info: "June 21 - July 22: Compassionate & Contradictory."},
-	{ name: "Leo", info: "July 23 - August 22: Radiant & Leader."},
-	{ name: "Virgo", info: "August 23 - September 22: Caring & Confident."},
-	{ name: "Libra", info: "September 23 - October 22: Charming & Harmonious"},
-	{ name: "Scorpio", info: "October 23 - November 21: Resilient & Powerful"},
-	{ name: "Sagittarius", info: "November 22 - December 21: Optimistic & Honest"},
-	{ name: "Capricorn", info: "December 22 - January 19: Resilient & Patient"},
-	{ name: "Aquarius", info: "January 20 - February 18: Trendsetters & Humanitarian"},
-	{ name: "Pisces", info: "February 19 - March 20: Sensitive & Mysterious"}
+	{ name: "Aries", info: "March 21 - April 19: Enthusiastic & Outgoing.\n
+							Element of Fire."},
+	{ name: "Taurus", info: "April 20 - May 20: Determined & Sensual.\n
+							Element of Earth."},
+	{ name: "Gemini", info: "May 21 - June 20: Intense & Explorative.\n
+							Element of Air."},
+	{ name: "Cancer", info: "June 21 - July 22: Compassionate & Contradictory.\n
+							Element of Water."},
+	{ name: "Leo", info: "July 23 - August 22: Radiant & Leader.\n
+						  Element of Fire."},
+	{ name: "Virgo", info: "August 23 - September 22: Caring & Confident.\n
+							Element of Earth."},
+	{ name: "Libra", info: "September 23 - October 22: Charming & Harmonious.\n
+							Element of Air."},
+	{ name: "Scorpio", info: "October 23 - November 21: Resilient & Powerful.\n
+							  Element of Water."},
+	{ name: "Sagittarius", info: "November 22 - December 21: Optimistic & Honest.\n
+								  Eelement of Fire."},
+	{ name: "Capricorn", info: "December 22 - January 19: Resilient & Patient.\n
+								Element of Earth."},
+	{ name: "Aquarius", info: "January 20 - February 18: Trendsetters & Humanitarian.\n
+							   Element of Air."},
+	{ name: "Pisces", info: "February 19 - March 20: Sensitive & Mysterious.\n
+							 Element of Water."}
 }];
 
 var password = require('password-hash-and-salt');
