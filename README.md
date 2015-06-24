@@ -5,5 +5,5 @@ application with postgres backend
 - authentication done
 - informational database loaded in
 
-- updating self draw of stars
-- front end still needs fixing up
+- needs updating of self draw of stars
+- needs to be merged with front end
