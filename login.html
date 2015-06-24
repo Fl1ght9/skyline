@@ -50,7 +50,7 @@ $(document).bind('pageinit', function() {
   alert('waiting for result from '+ jsonUrl);
   var loginInfo = { "user" : "mark", "password" : "password1" };
   $.post(jsonUrl,loginInfo, function(data) {
-    alert('login sucessfull');
+    alert('login sucessful');
     alert(data.token);
     window.localStorage.setItem('token', data.token);
     setToken();

@@ -145,7 +145,7 @@ exports.login = function(req, res, next){
   }
 
   //executing sql query to retieve encrypted password
-  query = client.query('SELECT * from logins where username = $1', [req.body.user]);
+  query = client.query('SELECT * from logins where username = $1', [req.body.createuser]);
 
   query.on('row', function(result){
     // Verifying a hash 
