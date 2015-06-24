@@ -6,7 +6,7 @@ var pg = require('pg').native
 client = new pg.Client(connectionString);
 client.connect();
 
-var zodiac =  [
+var zodiac = [
 	{ name: "Aries", info: "March 21 - April 19: Enthusiastic & Outgoing.\nElement: Fire.\nThis is the very first zodiac sign. The glyph of Aries is a Ram where its symbol appeared first in Acient Egypt. Aries personalities are enthusiastic and sociable in nature."},
 	{ name: "Taurus", info: "April 20 - May 20: Determined & Sensual.\nElement: Earth.\nThis is the second zodiac sign. The glyph of Taurus is a Bull where it symbolizes love and peace. Taurus' are dedicated, patient and practical."},
 	{ name: "Gemini", info: "May 21 - June 20: Intense & Explorative.\nElement: Air.\nThis is the third zodiac sign. The glyph of Gemini is twins Pollux and Castor, heroic brothers in Greek mythology. Gemini symbolizes intelligence, innocence and a generably sociable."},
