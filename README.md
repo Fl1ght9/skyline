@@ -3,6 +3,7 @@ connect the stars
 =======
 application with postgres backend
 - authentication done
-- process update in server/database
+- informational database loaded in
 
-- front end unknown at present time
+- updating self draw of stars
+- front end still needs fixing up
