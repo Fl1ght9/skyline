@@ -6,13 +6,39 @@ var pg = require('pg').native
 client = new pg.Client(connectionString);
 client.connect();
 
+var zodiac [
+	{ name: "Aries", info: "March 21 - April 19: Enthusiastic & Outgoing."},
+	{ name: "Taurus", info: "April 20 - May 20: Determined & Sensual."},
+	{ name: "Gemini", info: "May 21 - June 20: Intense & Explorative."},
+	{ name: "Cancer", info: "June 21 - July 22: Compassionate & Contradictory."},
+	{ name: "Leo", info: "July 23 - August 22: Radiant & Leader."},
+	{ name: "Virgo", info: "August 23 - September 22: Caring & Confident."},
+	{ name: "Libra", info: "September 23 - October 22: Charming & Harmonious"},
+	{ name: "Scorpio", info: "October 23 - November 21: Resilient & Powerful"},
+	{ name: "Sagittarius", info: "November 22 - December 21: Optimistic & Honest"},
+	{ name: "Capricorn", info: "December 22 - January 19: Resilient & Patient"},
+	{ name: "Aquarius", info: "January 20 - February 18: Trendsetters & Humanitarian"},
+	{ name: "Pisces", info: "February 19 - March 20: Sensitive & Mysterious"}
+}];
+
 var password = require('password-hash-and-salt');
 
 create_users_table ();
 create_login_table();
 
-var constellationQuery = client.query('DROP TABLE IF EXISTS constellation');
+var zodiacQuery = client.query('DROP TABLE IF EXISTS zodiac');
 var starQuery = client.query('DROP TABLE IF EXISTS star');
+
+//Loading in zodiacs into database with reference to name and info
+for(var i = 0; i < zodiac.length; i++){
+	query = client.query('INSERT INTO zodiac(name, info) VALUES ($1, $2)', [zodiac[i].name, zodiac[i].info]);
+	query.on('end', function(result){
+		console.log('inserted');
+	});
+	query.on('error', function(error){
+		throw new Error('Insert failed on:' + i);
+	});
+}
 
 // query = client.query('CREATE TABLE visits (date date)');
 // query.on('end', function(result) { client.end(); });
