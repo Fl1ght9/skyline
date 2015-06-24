@@ -19,7 +19,7 @@ var starQuery = client.query('DROP TABLE IF EXISTS star');
 
 //Creates users table
 function create_users_table () {
-	var queryString = ("Drop table if exists users cascade; create table users (id serial primary key, name varchar(80) NOT NULL,username varchar(80) UNIQUE NOT NULL)");
+	var queryString = ("Drop table if exists users cascade; create table users (id serial primary key, name varchar(80) NOT NULL,username varchar(80) UNIQUE NOT NULL");
 	query = client.query(queryString);
 	//if successfull
 	query.on('end', function(result){
