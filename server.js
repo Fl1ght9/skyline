@@ -36,8 +36,8 @@ app.get('/', function(req, res){
 });
 
 //Get zodiac information from database
-app.get('/zodiac/:name', function(req, res){
-	query = client.query('SELECT name, info FROM zodiac WHERE name = $1', [req.params.id]);
+app.get('/zodiac/:id', function(req, res){
+	query = client.query('SELECT name, info FROM zodiac WHERE id = $1', [req.params.id]);
 	query.on('row', function(result){
 		res.send(result);
 	});
